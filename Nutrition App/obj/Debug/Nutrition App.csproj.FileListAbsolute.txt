@@ -1,0 +1,18 @@
+C:\SD Card\GitHub\Nutrition App\Nutrition App\bin\Debug\Nutrition App.exe.config
+C:\SD Card\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition App.csprojResolveAssemblyReference.cache
+C:\SD Card\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition_App.Form1.resources
+C:\SD Card\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition_App.Properties.Resources.resources
+C:\SD Card\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition App.csproj.GenerateResource.Cache
+C:\SD Card\GitHub\Nutrition App\Nutrition App\bin\Debug\Nutrition App.exe
+C:\SD Card\GitHub\Nutrition App\Nutrition App\bin\Debug\Nutrition App.pdb
+C:\SD Card\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition App.exe
+C:\SD Card\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition App.pdb
+D:\GitHub\Nutrition App\Nutrition App\bin\Debug\Nutrition App.exe.config
+D:\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition App.exe
+D:\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition App.pdb
+D:\GitHub\Nutrition App\Nutrition App\bin\Debug\Nutrition App.exe
+D:\GitHub\Nutrition App\Nutrition App\bin\Debug\Nutrition App.pdb
+D:\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition App.csprojResolveAssemblyReference.cache
+D:\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition_App.Form1.resources
+D:\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition_App.Properties.Resources.resources
+D:\GitHub\Nutrition App\Nutrition App\obj\Debug\Nutrition App.csproj.GenerateResource.Cache
