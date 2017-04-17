@@ -67,11 +67,11 @@
             // txtbxResults
             // 
             this.txtbxResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxResults.Location = new System.Drawing.Point(6, 39);
+            this.txtbxResults.Location = new System.Drawing.Point(6, 48);
             this.txtbxResults.Multiline = true;
             this.txtbxResults.Name = "txtbxResults";
             this.txtbxResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtbxResults.Size = new System.Drawing.Size(1079, 361);
+            this.txtbxResults.Size = new System.Drawing.Size(783, 352);
             this.txtbxResults.TabIndex = 5;
             // 
             // txtbxAdd
@@ -139,7 +139,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1091, 149);
+            this.groupBox1.Size = new System.Drawing.Size(818, 149);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
@@ -154,7 +154,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 167);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1091, 155);
+            this.groupBox2.Size = new System.Drawing.Size(818, 155);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add";
@@ -165,7 +165,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 328);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1091, 421);
+            this.groupBox3.Size = new System.Drawing.Size(818, 421);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Results";
@@ -174,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 761);
+            this.ClientSize = new System.Drawing.Size(842, 761);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
