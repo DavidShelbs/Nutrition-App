@@ -23,7 +23,7 @@ namespace Nutrition_App
             string path = @"C:\Users\dnshe\Documents\Nutrition.txt";
             if (File.Exists(path))
             {
-                StreamReader sr = new StreamReader(path);
+                
                 string itemName = txtbxSearch.Text;
                 List<string> itemNames = new List<string>();
                 if (itemName == "all")
@@ -50,9 +50,8 @@ namespace Nutrition_App
                 foreach (object o in itemNames)
                 {
                     txtbxResults.Text += o.ToString() + "\r\n";
+                    lstbxResults.Items.Add(o.ToString());
                 }
-
-                sr.Close();
             }
 
             else
@@ -86,5 +85,41 @@ namespace Nutrition_App
 
             sw.Close();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string path = @"C:\Users\dnshe\Documents\Nutrition.txt";
+
+            if (File.Exists(path))
+            {
+                string fullItem = lstbxResults.SelectedItem.ToString();
+                List<string> itemNames = new List<string>();
+
+                foreach (string line in File.ReadAllLines(path))
+                {
+                    if (!line.Contains(fullItem))
+                    {
+                        itemNames.Add(line);
+                    }
+                }
+
+                File.Delete(path);
+
+                StreamWriter sw = new StreamWriter(path);
+
+                using (sw = File.CreateText(path))
+                {
+                    sw.WriteLine(fullItem);
+                }
+
+                sw.Close();
+            }
+
+            else
+            {
+                MessageBox.Show("No file found!\r\n\r\nAdd an entry to create a new file.", "Error");
+            }
+        }
+
     }
 }
