@@ -23,7 +23,6 @@ namespace Nutrition_App
             string path = @"C:\Users\dnshe\Documents\Nutrition.txt";
             if (File.Exists(path))
             {
-                
                 string itemName = txtbxSearch.Text;
                 List<string> itemNames = new List<string>();
                 if (itemName == "all")
