@@ -25,41 +25,49 @@ namespace Nutrition_App
             {
                 string itemName = txtbxSearch.Text;
                 List<string> itemNames = new List<string>();
-                if (itemName == "all")
+                if (itemName != "")
                 {
-                    foreach (string line in File.ReadAllLines(path))
+                    if (itemName == "all")
                     {
-                        itemNames.Add(line);
-                    }
-                }
-                else
-                {
-                    foreach (string line in File.ReadAllLines(path))
-                    {
-                        if (line.Contains(itemName))
+                        foreach (string line in File.ReadAllLines(path))
                         {
                             itemNames.Add(line);
                         }
                     }
+                    else
+                    {
+                        foreach (string line in File.ReadAllLines(path))
+                        {
+                            if (line.Contains(itemName))
+                            {
+                                itemNames.Add(line);
+                            }
+                        }
 
+                    }
+
+                    //txtbxResults.Text = itemNames.Count + " item(s) found!\r\n\r\n";
+                    //int i = 0;
+
+                    foreach (object o in itemNames)
+                    {
+                        //txtbxResults.Text += o.ToString() + "\r\n";
+                        //lstbxResults.Items.Add(o.ToString());
+                        //lstbxResults.Items.RemoveAt(i);
+                    }
+
+                    lstbxResults.Items.Clear();
+
+                    foreach (object o in itemNames)
+                    {
+                        lstbxResults.Items.Add(o.ToString());
+                    }
                 }
-
-                //txtbxResults.Text = itemNames.Count + " item(s) found!\r\n\r\n";
-                //int i = 0;
-
-                foreach (object o in itemNames)
+                
+                else
                 {
-                    //txtbxResults.Text += o.ToString() + "\r\n";
-                    //lstbxResults.Items.Add(o.ToString());
-                    //lstbxResults.Items.RemoveAt(i);
-                }
-
-                lstbxResults.Items.Clear();
-
-                foreach (object o in itemNames)
-                {
-                    lstbxResults.Items.Add(o.ToString());
-                }
+                    MessageBox.Show("Please enter a search condition.", "Error");
+                }               
             }
 
             else
@@ -72,33 +80,44 @@ namespace Nutrition_App
         {
             string path = @"..\Nutrition.txt";
             StreamWriter sw;
-
             string itemName = txtbxAdd.Text;
             string carbs = txtbxCarbs.Text;
 
-            if (!File.Exists(path))
+            if (itemName != "")
             {
-                using (sw = File.CreateText(path))
+                if (carbs != "")
                 {
-                    sw.WriteLine(itemName + " " + carbs);
+                    if (!File.Exists(path))
+                    {
+                        using (sw = File.CreateText(path))
+                        {
+                            sw.WriteLine(itemName + " " + carbs);
+                        }
+                    }
+                    else
+                    {
+                        using (sw = File.AppendText(path))
+                        {
+                            sw.WriteLine(itemName + " " + carbs);
+                            lstbxResults.Items.Add(itemName + " " + carbs);
+                        }
+                    }
+                    sw.Close();
                 }
-            }
+                else
+                {
+                    MessageBox.Show("Please enter the number of carbs before continuing.", "Error");
+                }
+            }                                     
             else
             {
-                using (sw = File.AppendText(path))
-                {
-                    sw.WriteLine(itemName + " " + carbs);
-                    lstbxResults.Items.Add(itemName);
-                }
+                MessageBox.Show("Please enter an item name before continuing.", "Error");
             }
-
-            sw.Close();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string path = @"..\Nutrition.txt";
-
             if (File.Exists(path))
             {
                 string fullItem = lstbxResults.SelectedItem.ToString();
@@ -132,6 +151,5 @@ namespace Nutrition_App
                 MessageBox.Show("No file found!\r\n\r\nAdd an entry to create a new file.", "Error");
             }
         }
-
     }
 }
