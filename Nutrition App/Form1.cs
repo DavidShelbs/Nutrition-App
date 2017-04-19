@@ -20,7 +20,7 @@ namespace Nutrition_App
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string path = @"C:\Users\dnshe\Documents\Nutrition.txt";
+            string path = @"..\Nutrition.txt";
             if (File.Exists(path))
             {
                 string itemName = txtbxSearch.Text;
@@ -44,11 +44,20 @@ namespace Nutrition_App
 
                 }
 
-                txtbxResults.Text = itemNames.Count + " item(s) found!\r\n\r\n";
+                //txtbxResults.Text = itemNames.Count + " item(s) found!\r\n\r\n";
+                //int i = 0;
 
                 foreach (object o in itemNames)
                 {
-                    txtbxResults.Text += o.ToString() + "\r\n";
+                    //txtbxResults.Text += o.ToString() + "\r\n";
+                    //lstbxResults.Items.Add(o.ToString());
+                    //lstbxResults.Items.RemoveAt(i);
+                }
+
+                lstbxResults.Items.Clear();
+
+                foreach (object o in itemNames)
+                {
                     lstbxResults.Items.Add(o.ToString());
                 }
             }
@@ -61,7 +70,7 @@ namespace Nutrition_App
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string path = @"C:\Users\dnshe\Documents\Nutrition.txt";
+            string path = @"..\Nutrition.txt";
             StreamWriter sw;
 
             string itemName = txtbxAdd.Text;
@@ -79,6 +88,7 @@ namespace Nutrition_App
                 using (sw = File.AppendText(path))
                 {
                     sw.WriteLine(itemName + " " + carbs);
+                    lstbxResults.Items.Add(itemName);
                 }
             }
 
@@ -87,11 +97,12 @@ namespace Nutrition_App
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string path = @"C:\Users\dnshe\Documents\Nutrition.txt";
+            string path = @"..\Nutrition.txt";
 
             if (File.Exists(path))
             {
                 string fullItem = lstbxResults.SelectedItem.ToString();
+                lstbxResults.Items.Remove(fullItem);
                 List<string> itemNames = new List<string>();
 
                 foreach (string line in File.ReadAllLines(path))
@@ -104,14 +115,16 @@ namespace Nutrition_App
 
                 File.Delete(path);
 
-                StreamWriter sw = new StreamWriter(path);
+                StreamWriter sw;
 
                 using (sw = File.CreateText(path))
                 {
-                    sw.WriteLine(fullItem);
+                    foreach (object o in itemNames)
+                    {
+                        sw.WriteLine(o.ToString());
+                    }
+                    sw.Close();
                 }
-
-                sw.Close();
             }
 
             else

@@ -30,7 +30,6 @@
         {
             this.txtbxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtbxResults = new System.Windows.Forms.TextBox();
             this.txtbxAdd = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtbxCarbs = new System.Windows.Forms.TextBox();
@@ -40,8 +39,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lstbxResults = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.lstbxResults = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -49,6 +48,7 @@
             // 
             // txtbxSearch
             // 
+            this.txtbxSearch.AcceptsTab = true;
             this.txtbxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxSearch.Location = new System.Drawing.Point(6, 79);
             this.txtbxSearch.Name = "txtbxSearch";
@@ -66,23 +66,13 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtbxResults
-            // 
-            this.txtbxResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxResults.Location = new System.Drawing.Point(1063, 187);
-            this.txtbxResults.Multiline = true;
-            this.txtbxResults.Name = "txtbxResults";
-            this.txtbxResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtbxResults.Size = new System.Drawing.Size(383, 340);
-            this.txtbxResults.TabIndex = 5;
-            // 
             // txtbxAdd
             // 
             this.txtbxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxAdd.Location = new System.Drawing.Point(6, 76);
             this.txtbxAdd.Name = "txtbxAdd";
             this.txtbxAdd.Size = new System.Drawing.Size(383, 49);
-            this.txtbxAdd.TabIndex = 2;
+            this.txtbxAdd.TabIndex = 1;
             // 
             // btnAdd
             // 
@@ -101,7 +91,7 @@
             this.txtbxCarbs.Location = new System.Drawing.Point(435, 79);
             this.txtbxCarbs.Name = "txtbxCarbs";
             this.txtbxCarbs.Size = new System.Drawing.Size(153, 49);
-            this.txtbxCarbs.TabIndex = 3;
+            this.txtbxCarbs.TabIndex = 2;
             // 
             // label3
             // 
@@ -168,24 +158,15 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 328);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(818, 421);
+            this.groupBox3.Size = new System.Drawing.Size(818, 450);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Results";
             // 
-            // lstbxResults
-            // 
-            this.lstbxResults.FormattingEnabled = true;
-            this.lstbxResults.ItemHeight = 42;
-            this.lstbxResults.Location = new System.Drawing.Point(6, 48);
-            this.lstbxResults.Name = "lstbxResults";
-            this.lstbxResults.Size = new System.Drawing.Size(373, 340);
-            this.lstbxResults.TabIndex = 15;
-            // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(419, 339);
+            this.btnDelete.Location = new System.Drawing.Point(435, 395);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(153, 49);
             this.btnDelete.TabIndex = 11;
@@ -193,24 +174,31 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // lstbxResults
+            // 
+            this.lstbxResults.FormattingEnabled = true;
+            this.lstbxResults.ItemHeight = 42;
+            this.lstbxResults.Location = new System.Drawing.Point(6, 48);
+            this.lstbxResults.Name = "lstbxResults";
+            this.lstbxResults.Size = new System.Drawing.Size(373, 424);
+            this.lstbxResults.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1619, 761);
+            this.ClientSize = new System.Drawing.Size(846, 805);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.txtbxResults);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Nutrition Tracker";
+            this.Text = "Carb Tracker";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -218,7 +206,6 @@
 
         private System.Windows.Forms.TextBox txtbxSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtbxResults;
         private System.Windows.Forms.TextBox txtbxAdd;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtbxCarbs;
